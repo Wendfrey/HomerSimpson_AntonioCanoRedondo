@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         engr_verd = findViewById(R.id.img_engr_verd);
         engr_verm = findViewById(R.id.img_engr_vemell);
         donut = findViewById(R.id.img_donut);
-        
+
+
     }
 
     public void titleClick(View v){
