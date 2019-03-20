@@ -9,10 +9,11 @@
     <ImageView
         android:id="@+id/img_simpsontitle"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="99dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:onClick="titleClick"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,4 +31,64 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.02"
         app:srcCompat="@drawable/homer_simpson" />
+
+    <ImageView
+        android:id="@+id/img_engr_verd"
+        android:layout_width="48dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.227"
+        app:srcCompat="@drawable/engranatge_verd" />
+
+    <ImageView
+        android:id="@+id/img_engr_vemell"
+        android:layout_width="70dp"
+        android:layout_height="71dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/img_engr_verd"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.127"
+        app:srcCompat="@drawable/engranatge_vermell" />
+
+    <ImageView
+        android:id="@+id/img_engr_blau"
+        android:layout_width="57dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/img_engr_verd"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/img_engr_vemell"
+        app:srcCompat="@drawable/engranatge_blau" />
+
+    <ImageView
+        android:id="@+id/img_ull"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.44"
+        app:srcCompat="@drawable/ull" />
+
+    <ImageView
+        android:id="@+id/img_donut"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_simpsontitle"
+        app:srcCompat="@drawable/donut" />
 </android.support.constraint.ConstraintLayout>
