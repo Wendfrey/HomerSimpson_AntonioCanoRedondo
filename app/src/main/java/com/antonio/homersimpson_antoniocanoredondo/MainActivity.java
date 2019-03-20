@@ -1,8 +1,10 @@
 package com.antonio.homersimpson_antoniocanoredondo;
 
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -12,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView ull, engr_verd, engr_blau, engr_verm, donut;
     private Animation ullAnimation, donutAnimation, animHorario, animAntiHorario1, animAntiHorario2;
+    private MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         donutAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_donut);
         ullAnimation = AnimationUtils.loadAnimation(this,R.anim.anim_ull);
 
+        mediaPlayer = MediaPlayer.create(this,R.raw.the_simpsons);
+        mediaPlayer.setLooping(true);
     }
 
     public void titleClick(View v){
@@ -67,5 +72,14 @@ public class MainActivity extends AppCompatActivity {
 
             ull.startAnimation(ullAnimation);
         }
+    }
+
+    public void donutClick(View v){
+        if(mediaPlayer.isPlaying()){
+            mediaPlayer.pause();
+        } else{
+            mediaPlayer.start();
+        }
+        Log.d("Donut", "Clicked");
     }
 }
