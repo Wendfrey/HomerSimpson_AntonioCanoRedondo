@@ -27,10 +27,16 @@ public class MainActivity extends AppCompatActivity {
         donut = findViewById(R.id.img_donut);
 
 
+
     }
 
     public void titleClick(View v){
         if(ull.getVisibility() == View.VISIBLE) {
+
+            engr_verm.clearAnimation();
+            engr_blau.clearAnimation();
+            engr_verd.clearAnimation();
+
             ull.setVisibility(View.INVISIBLE);
             engr_verm.setVisibility(View.INVISIBLE);
             engr_verd.setVisibility(View.INVISIBLE);
@@ -42,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
             engr_verd.setVisibility(View.VISIBLE);
             engr_blau.setVisibility(View.VISIBLE);
             donut.setVisibility(View.VISIBLE);
+            Animation animHorario= AnimationUtils.loadAnimation(this, R.anim.anim_spin_sentido);
+            engr_verd.startAnimation(animHorario);
+            Animation animAntiHorario = AnimationUtils.loadAnimation(this,R.anim.anim_spin_contrasentido);
+            engr_blau.startAnimation(animAntiHorario);
+            Animation animAntiHorario2 = AnimationUtils.loadAnimation(this,R.anim.anim_spin_contrasentido);
+            engr_verm.startAnimation(animAntiHorario2);
         }
     }
 }
