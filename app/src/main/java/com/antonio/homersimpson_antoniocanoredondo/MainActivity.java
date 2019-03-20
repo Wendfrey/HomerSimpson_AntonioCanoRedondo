@@ -10,7 +10,8 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView ull, engr_verd, engr_blau, engr_verm, donut;
+    private ImageView ull, engr_verd, engr_blau, engr_verm, donut;
+    private Animation ullAnimation, donutAnimation, animHorario, animAntiHorario1, animAntiHorario2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,11 @@ public class MainActivity extends AppCompatActivity {
         engr_verm = findViewById(R.id.img_engr_vemell);
         donut = findViewById(R.id.img_donut);
 
-
+        animHorario= AnimationUtils.loadAnimation(this, R.anim.anim_spin_sentido);
+        animAntiHorario1 = AnimationUtils.loadAnimation(this,R.anim.anim_spin_contrasentido);
+        animAntiHorario2 = AnimationUtils.loadAnimation(this,R.anim.anim_spin_contrasentido);
+        donutAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_donut);
+        ullAnimation = AnimationUtils.loadAnimation(this,R.anim.anim_ull);
 
     }
 
@@ -38,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
             engr_verd.clearAnimation();
 
             donut.clearAnimation();
+
+            ull.clearAnimation();
 
             ull.setVisibility(View.INVISIBLE);
             engr_verm.setVisibility(View.INVISIBLE);
@@ -51,15 +58,14 @@ public class MainActivity extends AppCompatActivity {
             engr_blau.setVisibility(View.VISIBLE);
             donut.setVisibility(View.VISIBLE);
 
-            Animation animHorario= AnimationUtils.loadAnimation(this, R.anim.anim_spin_sentido);
+
             engr_verd.startAnimation(animHorario);
-            Animation animAntiHorario = AnimationUtils.loadAnimation(this,R.anim.anim_spin_contrasentido);
-            engr_blau.startAnimation(animAntiHorario);
-            Animation animAntiHorario2 = AnimationUtils.loadAnimation(this,R.anim.anim_spin_contrasentido);
+            engr_blau.startAnimation(animAntiHorario1);
             engr_verm.startAnimation(animAntiHorario2);
 
-            Animation donutAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_donut);
             donut.startAnimation(donutAnimation);
+
+            ull.startAnimation(ullAnimation);
         }
     }
 }
